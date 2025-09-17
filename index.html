@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🐍 Snake Game Pro</h1>
+
+  <div class="controls">
+    <button onclick="startGame()">🔄 New Game</button>
+    <button onclick="resumeGame()">▶ Resume</button>
+    <button onclick="pauseGame()">⏸ Pause</button>
+    <select id="modeSelect" onchange="changeMode(this.value)">
+      <option value="classic">Classic</option>
+      <option value="time">Time Challenge</option>
+      <option value="maze">Maze Mode</option>
+    </select>
+    <select id="themeSelect" onchange="changeTheme(this.value)">
+      <option value="classic">Classic Green</option>
+      <option value="neon">Neon Blue</option>
+      <option value="retro">Retro Pixel</option>
+      <option value="dark">Dark Mode</option>
+    </select>
+  </div>
+
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  <div class="arrow-controls">
+    <button onclick="changeDirection('up')">⬆</button><br>
+    <button onclick="changeDirection('left')">⬅</button>
+    <button onclick="changeDirection('down')">⬇</button>
+    <button onclick="changeDirection('right')">➡</button>
+  </div>
+
+  <div id="scoreBoard">
+    <p>Score: <span id="score">0</span></p>
+    <p>Level: <span id="level">1</span></p>
+    <h3>🏆 Top 5 Scores</h3>
+    <ol id="highScores"></ol>
+  </div>
+
+  <audio id="eatSound" src="sounds/eat.mp3"></audio>
+  <audio id="bonusSound" src="sounds/bonus.mp3"></audio>
+  <audio id="levelUpSound" src="sounds/levelup.mp3"></audio>
+  <audio id="gameOverSound" src="sounds/gameover.mp3"></audio>
+  <audio id="bgMusic" src="sounds/bgmusic.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
